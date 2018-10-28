@@ -19,18 +19,18 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="100dp"
+            android:id="@+id/pet_image"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_margin="8dp"
             android:scaleType="centerCrop"
             tools:srcCompat="@tools:sample/avatars[3]" />
 
         <TextView
-            android:id="@+id/textView_Name"
+            android:id="@+id/pet_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imageView"
+            android:layout_below="@id/pet_image"
             android:textAllCaps="true"
             android:layout_centerHorizontal="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -38,53 +38,70 @@
 
 
         <TextView
-            android:id="@+id/textView_Species"
+            android:id="@+id/pet_species"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView_Name"
-            android:layout_alignLeft="@id/imageView"
+            android:layout_below="@id/pet_name"
+            android:layout_alignLeft="@id/pet_image"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             tools:text="Cat" />
 
         <TextView
-            android:id="@+id/textView_Breed"
+            android:id="@+id/pet_breed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView_Name"
-           android:layout_toRightOf="@id/textView_Species"
+            android:layout_below="@id/pet_name"
+           android:layout_toRightOf="@id/pet_species"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:visibility="gone"
+            android:visibility="visible"
             tools:text=" (Bulldog)" />
 
         <TextView
-            android:id="@+id/textView_Gender"
+            android:id="@+id/pet_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView_Species"
-            android:layout_alignLeft="@id/imageView"
+            android:layout_below="@id/pet_species"
+            android:layout_alignLeft="@id/pet_image"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             tools:text="Female" />
 
         <TextView
-            android:id="@+id/textView_Age"
+            android:id="@+id/pet_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView_Gender"
-            android:layout_alignLeft="@id/imageView"
+            android:layout_below="@id/pet_gender"
+            android:layout_alignLeft="@id/pet_image"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             tools:text="8" />
 
         <TextView
-            android:id="@+id/textView_Age_Suffix"
+            android:id="@+id/pet_age_suffix"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView_Gender"
-            android:layout_toRightOf="@id/textView_Age"
+            android:layout_below="@id/pet_gender"
+            android:layout_toRightOf="@id/pet_age"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             tools:text=" years old" />
 
+        <TextView
+            android:id="@+id/pet_arrived"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pet_age"
+            android:layout_alignLeft="@id/pet_image"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            tools:text="Arrived: "
+            />
 
-
+        <TextView
+            android:id="@+id/pet_arrived_suffix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pet_age"
+            android:layout_toRightOf="@id/pet_arrived"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            tools:text="23.9.1986"
+            />
 
 
 
