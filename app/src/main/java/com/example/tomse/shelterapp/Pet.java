@@ -28,15 +28,15 @@ public class Pet {
     private String petGender;
 
     @NonNull
-    private String petAge;
+    private int petAge;
 
     @NonNull
-    private String petArrivedSuffix;
+    private String petArrived;
 
 
     public Pet(int id, @NonNull int petImage, @NonNull String petName,
                @NonNull String petSpecies, String petBreed, @NonNull String petGender,
-               @NonNull String petAge, @NonNull String petArrivedSuffix) {
+               @NonNull int petAge, @NonNull String petArrived) {
         this.id = id;
         this.petImage = petImage;
         this.petName = petName;
@@ -44,7 +44,7 @@ public class Pet {
         this.petBreed = petBreed;
         this.petGender = petGender;
         this.petAge = petAge;
-        this.petArrivedSuffix = petArrivedSuffix;
+        this.petArrived = petArrived;
     }
 
     public int getId() {
@@ -76,12 +76,45 @@ public class Pet {
     }
 
     @NonNull
-    public String getPetAge() {
+    public int getPetAge() {
         return petAge;
     }
 
     @NonNull
-    public String getPetArrivedSuffix() {
-        return petArrivedSuffix;
+    public String getPetArrived() {
+        return petArrived;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPetImage(@NonNull int petImage) {
+        this.petImage = petImage;
+    }
+
+    public void setPetName(@NonNull String petName) {
+        this.petName = petName;
+    }
+
+    public void setPetSpecies(@NonNull String petSpecies) {
+        this.petSpecies = petSpecies;
+    }
+
+    public void setPetBreed(String petBreed) {
+        this.petBreed = petBreed;
+    }
+
+    public void setPetGender(@NonNull String petGender) {
+        this.petGender = petGender;
+    }
+
+    public void setPetAge(@NonNull int petAge) {
+        this.petAge = petAge;
+    }
+
+    public void setPetArrived(@NonNull String petArrived) {
+        this.petArrived = petArrived;
     }
 }

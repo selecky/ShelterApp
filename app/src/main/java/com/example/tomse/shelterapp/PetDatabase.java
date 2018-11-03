@@ -1,6 +1,7 @@
 package com.example.tomse.shelterapp;
 
 import android.app.Activity;
+import android.app.Application;
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
@@ -22,6 +23,7 @@ public abstract class PetDatabase extends RoomDatabase {
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     PetDatabase.class, "pet_database")
                     .fallbackToDestructiveMigration()
+                    .addCallback(roomCallback)
                     .build();
         }
         return instance;
@@ -33,21 +35,28 @@ public abstract class PetDatabase extends RoomDatabase {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
+
+
+            new PopulateDbAsyncTask(instance).execute();
         }
     };
 
     private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void>{
         private PetDao petDao;
+        protected Context context;
 
-        public PopulateDbAsyncTask(PetDao petDao) {
-            this.petDao = petDao;
+        private PopulateDbAsyncTask(PetDatabase petDatabase) {
+            petDao = petDatabase.getPetDao();
+
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
-            int cat1 = ResourcesCompat.getDrawable(getResources(), R.drawable.cat1, null)
+
+            int cat1 = context.getResources().getIdentifier("cat1","drawable",context.getPackageName());
+
             petDao.insertPet(new Pet(1, cat1, "Groomy","Cat", "",
-                    "Male", "1", "Today"));
+                    "Male", 1, "Today"));
             return null;
         }
     }
